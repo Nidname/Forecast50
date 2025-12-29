@@ -110,16 +110,8 @@ if uploaded_file is not None:
     if not refs_seleccionadas:
         st.info("Selecciona al menos una referencia para continuar.")
         st.stop()
-
-    # Parámetros del modelo (manteniendo el mismo orden por defecto del archivo original)
-    st.markdown("### ⚙️ Configuración (opcional)")
-    colA, colB, colC = st.columns(3)
-    with colA:
-        p = st.number_input("p", min_value=0, max_value=10, value=5, step=1)
-    with colB:
-        d = st.number_input("d", min_value=0, max_value=2, value=1, step=1)
-    with colC:
-        q = st.number_input("q", min_value=0, max_value=10, value=2, step=1)
+    # Parámetros del modelo (fijos para SaaS: sin p,d,q visibles)
+    ORDER_ARIMA = (1, 1, 0)
 
     # ----------------------------------------------------------------------
     # Pronóstico por referencia
@@ -145,7 +137,7 @@ if uploaded_file is not None:
 
         # Ajuste del modelo
         try:
-            model = ARIMA(serie, order=(int(p), int(d), int(q)))
+            model = ARIMA(serie, order=ORDER_ARIMA)
             model_fit = model.fit()
         except Exception as e:
             st.error(f"❌ No pude ajustar el modelo para '{ref}'. Error: {e}")
