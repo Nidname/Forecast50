@@ -28,7 +28,7 @@ st.markdown("""
 # --------------------------------------------------------------------------
 st.markdown("""
 1. Descarga la plantilla de demanda histórica:  
-[📊 Plantilla](https://docs.google.com/spreadsheets/d/1vhv9kSYgz3aoSkfVx1Gtf8nJwWlXL_UP/edit?usp=sharing&ouid=114619176855631654417&rtpof=true&sd=true)
+[📊 Plantilla](https://docs.google.com/spreadsheets/d/1ahEceNTmowyUnXssWv6eY_ftV8FeyZpf/edit?usp=drive_link&ouid=114619176855631654417&rtpof=true&sd=true)
 
 2. Carga el archivo Excel con el historial de la demanda mensual.  
 Debe contener al menos 8 meses de datos y la columna **Fecha** en formato dd/mm/aaaa.
